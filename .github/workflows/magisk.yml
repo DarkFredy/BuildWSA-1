@@ -29,7 +29,7 @@ on:
       gapps_variant:
         description: "Variants of gapps"
         required: true
-        default: "none"
+        default: "pico"
         type: choice
         options:
         - none
@@ -604,8 +604,18 @@ jobs:
             name2="-GApps-${variant}"
           fi
           echo "artifact_name=WSA${name1}${name2}_${{ env.WSA_VER }}_${{ matrix.arch }}_${{ env.WSA_REL }}" >> $GITHUB_ENV
-      - name: Upload WSA
-        uses: actions/upload-artifact@v2
+      - name: create zip
+        run: zip -r ${{ env.artifact_name }}.zip ./${{ matrix.arch }}/*
+      # - name: Upload WSA
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: ${{ env.artifact_name }}
+      #     path: "./${{ matrix.arch }}/*"
+      - name: Upload WSA to release
+        uses: ncipollo/release-action@v1
         with:
-          name: ${{ env.artifact_name }}
-          path: "./${{ matrix.arch }}/*"
+          artifacts: "${{ env.artifact_name }}.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          allowUpdates: true
+          tag: "${{ env.WSA_VER }}-${{ github.event.inputs.gapps_variant }}-${{ env.WSA_REL }}"
+
