@@ -1,5 +1,13 @@
 # Magisk on WSA (with Google Apps)
 
+## TL;DR 太长了，别看
+
+使用 actions 自动编译 Lsposed 团队的 Magisk WSA 并创建 release 。可以直接在 release 中下载编译好的 安卓子系统
+
+release中默认是 Google Apps + Magisk 的安卓子系统，打包成 zip 文件。
+
+如果有自定义需求，可以 fork 本项目，在 actions 中选择自定义参数。
+
 ## Features
 - Integrate Magisk and OpenGApps in a few clicks within minutes
 - No Linux environment required for integration
