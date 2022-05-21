@@ -9,12 +9,14 @@
 如果有自定义需求，可以 fork 本项目，在 actions 中选择自定义参数进行调整。
 
 ## Features
+
 - Integrate Magisk and OpenGApps in a few clicks within minutes
 - No Linux environment required for integration
 - Keep each build up to date
 - Support both ARM64 and x64
 - Support all OpenGApps variants except for aroma (aroma does not support x86_64, please use super instead)
 - Fix external storage access of DocumentUI
+- Fix VPN dialog not showing (use our [VpnDialogs app](https://github.com/LSPosed/VpnDialogs))
 - Unattended installation
 - Automatically activates developers mode in Windows 11
 - Update to new version while preserving data with one-click script
@@ -22,6 +24,7 @@
 - Support managing start menu icons (manually installing [WSAHelper](https://github.com/LSPosed/WSAHelper/releases/latest) to use this feature)
 
 ## Video Guide
+
 https://user-images.githubusercontent.com/5022927/145696886-e13ebfc1-ff25-4410-893e-d3e517af70ea.mp4
 
 ## Text Guide
@@ -51,6 +54,18 @@ https://user-images.githubusercontent.com/5022927/145696886-e13ebfc1-ff25-4410-8
 1. Magisk/Play store will be launched. Enjoy by installing LSPosed-zygisk with zygisk enabled or Riru and LSPosed-riru
 
 ## FAQ
+
+- Actions workflow task `Delete workflow runs` run Failed
+
+    Check workflow permissions, should be `Read and write permissions`
+
+     ![permissions](https://user-images.githubusercontent.com/40033067/168649322-dadaafc9-dd31-4922-afe1-8aa933b7b036.png)
+
+     Read the [Github Docs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#configuring-the-default-github_token-permissions) to find out how to change this setting
+
+- Why should delete old workflow runs
+
+    Keeping old workflow runs can take up a lot of storage resources and is suspected to be abusive, which can lead to banning
 - Can I delete the unzipped folder?
 
     No.
@@ -66,9 +81,6 @@ https://user-images.githubusercontent.com/5022927/145696886-e13ebfc1-ff25-4410-8
 - How can I update Magisk to new version?
 
     Do the same as updating WSA
-- VPN is not working?
-
-    Tell Microsoft to fix it. We cannot fix it easily.
 - How to pass safetynet?
 
     Like all the other emulators, no way.
@@ -98,6 +110,7 @@ https://user-images.githubusercontent.com/5022927/145696886-e13ebfc1-ff25-4410-8
         ![merge](https://docs.github.com/assets/cb-128489/images/help/repository/fetch-and-merge-button.png)
 
 ## Credits
+
 - [Magisk](https://github.com/topjohnwu/Magisk): The most famous root solution on Android
 - [The Open GApps Project](https://opengapps.org): One of the most famous Google Apps packages solution
 - [WSA-Kernel-SU](https://github.com/LSPosed/WSA-Kernel-SU) and [kernel-assisted-superuser](https://git.zx2c4.com/kernel-assisted-superuser/): The kernel `su` for debugging Magisk Integration
