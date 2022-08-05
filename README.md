@@ -1,3 +1,32 @@
+# Magisk on WSA (with Google Apps)
+
+## TL;DR 太长了;看这
+
+使用 actions 自动编译 Lsposed 团队的 Magisk WSA 并创建 zip 打包的 release，直接在 release 中下载编译好的 安卓子系统
+
+本项目 release 中默认是 Google Apps + Magisk 的安卓子系统。
+
+如果有自定义需求，可以 fork 本项目，在 actions 中选择自定义参数进行调整。
+
+## Features
+
+- Integrate Magisk and OpenGApps in a few clicks within minutes
+- No Linux environment required for integration
+- Keep each build up to date
+- Support both ARM64 and x64
+- Support all OpenGApps variants except for aroma (aroma does not support x86_64, please use super instead)
+- Fix VPN dialog not showing (use our [VpnDialogs app](https://github.com/LSPosed/VpnDialogs))
+- Unattended installation
+- Automatically activates developers mode in Windows 11
+- Update to new version while preserving data with one-click script
+- Merged all language packs
+- Support managing start menu icons (manually installing [WSAHelper](https://github.com/LSPosed/WSAHelper/releases/latest) to use this feature)
+
+## Video Guide
+
+https://user-images.githubusercontent.com/5022927/145696886-e13ebfc1-ff25-4410-893e-d3e517af70ea.mp4
+
+
 ## Text Guide
 
 1. Star (if you like) and fork this repo (keep it PUBLIC, private repo is not supported)
