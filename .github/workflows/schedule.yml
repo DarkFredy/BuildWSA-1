@@ -1,0 +1,17 @@
+name: Auto Build WSA
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "5 4 * * 5"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: trigger build WSA
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: Build WSA
+          token: ${{ secrets.PERSONAL_TOKEN }}
+          inputs: '{ "release_type": "retail", "gapps_variant": "pico", "root_sol": "magisk"}'
