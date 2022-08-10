@@ -9,9 +9,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: trigger build WSA
+      - name: trigger build WSA - retail
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: Build WSA
           token: ${{ secrets.PERSONAL_TOKEN }}
           inputs: '{ "release_type": "retail", "gapps_variant": "pico", "root_sol": "magisk"}'
+      - name: trigger build WSA - release preview
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: Build WSA
+          token: ${{ secrets.PERSONAL_TOKEN }}
+          inputs: '{ "release_type": "release preview", "gapps_variant": "pico", "root_sol": "magisk"}'
